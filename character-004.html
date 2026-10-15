@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="neptus-page">
 
 <header class="character-header">
   <div class="container">
@@ -151,6 +151,125 @@ function changeImage(direction) {
   document.getElementById("character-image").src = images[currentImage];
 }
 </script>
+  
+<style>
+/* NEPTUS : DEEP SEA / CELESTIAL ARCHIVE */
 
+.neptus-page {
+  background:
+    radial-gradient(ellipse at 50% 20%, rgba(23, 59, 112, 0.55), transparent 55%),
+    radial-gradient(ellipse at 80% 80%, rgba(57, 127, 173, 0.14), transparent 45%),
+    #050914;
+  color: #dce8f5;
+}
+
+.neptus-page .character-header {
+  border-bottom: 1px solid rgba(120, 169, 218, 0.3);
+}
+
+.neptus-page .character-number {
+  color: #7faedb;
+  letter-spacing: 0.3em;
+}
+
+.neptus-page .character-title {
+  color: #dce8f5;
+  text-shadow: 0 0 24px rgba(57, 127, 173, 0.45);
+}
+
+.neptus-page .profile-row {
+  border-color: rgba(120, 169, 218, 0.2);
+}
+
+.neptus-page .profile-label {
+  color: #7faedb;
+  letter-spacing: 0.12em;
+}
+
+.neptus-page .profile-value {
+  color: #dce8f5;
+}
+
+.neptus-page .character-introduction {
+  border-color: rgba(120, 169, 218, 0.35);
+  background: rgba(14, 30, 55, 0.45);
+  padding: 18px;
+}
+
+.neptus-page .introduction-label {
+  color: #7faedb;
+  letter-spacing: 0.18em;
+}
+
+.neptus-page .gallery-image {
+  border: 1px solid rgba(120, 169, 218, 0.35);
+  box-shadow: 0 0 30px rgba(23, 59, 112, 0.25);
+}
+
+.neptus-page .gallery-button {
+  color: #a8d5ff;
+}
+
+.neptus-page .color-palette span {
+  border: 1px solid rgba(180, 210, 240, 0.3);
+  box-shadow: 0 0 12px rgba(57, 127, 173, 0.15);
+}
+
+.neptus-page .back-index {
+  color: #a8d5ff;
+  border-color: rgba(120, 169, 218, 0.35);
+}
+
+.neptus-page .site-footer {
+  color: #7896b8;
+}
+  /* CELESTIAL ORBIT DETAILS */
+
+.neptus-page .character-gallery {
+  position: relative;
+}
+
+.neptus-page .character-gallery::before {
+  content: "N • 49°";
+  position: absolute;
+  top: -24px;
+  right: 8px;
+  color: rgba(127, 174, 219, 0.75);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+}
+
+.neptus-page .character-record::before {
+  content: "PLANETARY OBSERVATION  /  VIII";
+  display: block;
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(120, 169, 218, 0.25);
+  color: #7896b8;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+}
+
+.neptus-page .character-introduction::after {
+  content: "OBSERVATION RECORD  —  NEPTUNE";
+  display: block;
+  margin-top: 18px;
+  color: #7896b8;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+}
+
+.neptus-page .back-index {
+  letter-spacing: 0.2em;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.neptus-page .back-index:hover {
+  color: #ffffff;
+  border-color: #7faedb;
+}
+  
+</style>
+  
 </body>
 </html>
