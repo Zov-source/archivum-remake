@@ -152,124 +152,239 @@ function changeImage(direction) {
 }
 </script>
   
+
 <style>
-/* NEPTUS : DEEP SEA / CELESTIAL ARCHIVE */
+/* NEPTUS — DEEP SPACE ARCHIVE */
 
 .neptus-page {
+  position: relative;
+  overflow: hidden;
   background:
-    radial-gradient(ellipse at 50% 20%, rgba(23, 59, 112, 0.55), transparent 55%),
-    radial-gradient(ellipse at 80% 80%, rgba(57, 127, 173, 0.14), transparent 45%),
-    #050914;
-  color: #dce8f5;
+    radial-gradient(ellipse at 75% 18%, rgba(28, 91, 170, 0.28), transparent 32%),
+    radial-gradient(ellipse at 15% 60%, rgba(14, 55, 112, 0.25), transparent 38%),
+    radial-gradient(ellipse at 50% 100%, rgba(22, 85, 130, 0.18), transparent 45%),
+    #030711;
+  color: #dceaff;
 }
 
+/* Star field */
+.neptus-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.55;
+  background-image:
+    radial-gradient(circle, #c6e4ff 1px, transparent 1.5px),
+    radial-gradient(circle, #5f9edb 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(255,255,255,.8) 1px, transparent 1.5px);
+  background-size: 97px 113px, 151px 167px, 223px 197px;
+  background-position: 12px 20px, 54px 73px, 101px 39px;
+}
+
+/* Keep content above stars */
+.neptus-page .character-header,
+.neptus-page main,
+.neptus-page .site-footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
 .neptus-page .character-header {
-  border-bottom: 1px solid rgba(120, 169, 218, 0.3);
+  border-bottom: 1px solid rgba(117, 177, 238, 0.25);
+  padding-top: 26px;
+  padding-bottom: 26px;
 }
 
 .neptus-page .character-number {
-  color: #7faedb;
-  letter-spacing: 0.3em;
+  color: #83bdf3;
+  letter-spacing: 0.32em;
+  font-size: 10px;
 }
 
-.neptus-page .character-title {
-  color: #dce8f5;
-  text-shadow: 0 0 24px rgba(57, 127, 173, 0.45);
+/* Main layout */
+.neptus-page .character-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 44px;
+  align-items: start;
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
 
-.neptus-page .profile-row {
-  border-color: rgba(120, 169, 218, 0.2);
-}
-
-.neptus-page .profile-label {
-  color: #7faedb;
-  letter-spacing: 0.12em;
-}
-
-.neptus-page .profile-value {
-  color: #dce8f5;
-}
-
-.neptus-page .character-introduction {
-  border-color: rgba(120, 169, 218, 0.35);
-  background: rgba(14, 30, 55, 0.45);
-  padding: 18px;
-}
-
-.neptus-page .introduction-label {
-  color: #7faedb;
-  letter-spacing: 0.18em;
-}
-
-.neptus-page .gallery-image {
-  border: 1px solid rgba(120, 169, 218, 0.35);
-  box-shadow: 0 0 30px rgba(23, 59, 112, 0.25);
-}
-
-.neptus-page .gallery-button {
-  color: #a8d5ff;
-}
-
-.neptus-page .color-palette span {
-  border: 1px solid rgba(180, 210, 240, 0.3);
-  box-shadow: 0 0 12px rgba(57, 127, 173, 0.15);
-}
-
-.neptus-page .back-index {
-  color: #a8d5ff;
-  border-color: rgba(120, 169, 218, 0.35);
-}
-
-.neptus-page .site-footer {
-  color: #7896b8;
-}
-  /* CELESTIAL ORBIT DETAILS */
-
+/* Planetary image */
 .neptus-page .character-gallery {
   position: relative;
+  padding: 22px;
 }
 
 .neptus-page .character-gallery::before {
-  content: "N • 49°";
+  content: "PLANET  /  VIII";
   position: absolute;
-  top: -24px;
-  right: 8px;
-  color: rgba(127, 174, 219, 0.75);
-  font-size: 10px;
+  top: 0;
+  left: 22px;
+  color: #7ba9d8;
+  font-size: 9px;
+  letter-spacing: 0.25em;
+}
+
+.neptus-page .character-gallery::after {
+  content: "DISTANT BLUE WORLD";
+  position: absolute;
+  bottom: 0;
+  right: 22px;
+  color: #7ba9d8;
+  font-size: 9px;
   letter-spacing: 0.2em;
+}
+
+.neptus-page .gallery-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 1px solid rgba(117, 177, 238, 0.35);
+  box-shadow: 0 0 55px rgba(22, 85, 160, 0.22);
+}
+
+.neptus-page .gallery-button {
+  color: #b9ddff;
+  background: rgba(3, 12, 28, 0.8);
+  border: 1px solid rgba(117, 177, 238, 0.35);
+}
+
+/* Character title */
+.neptus-page .character-record {
+  padding-top: 18px;
 }
 
 .neptus-page .character-record::before {
-  content: "PLANETARY OBSERVATION  /  VIII";
+  content: "DEEP SPACE OBSERVATION";
   display: block;
-  margin-bottom: 18px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(120, 169, 218, 0.25);
-  color: #7896b8;
+  color: #6c9fce;
   font-size: 9px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.28em;
+  margin-bottom: 18px;
+}
+
+.neptus-page .character-title {
+  color: #e5f2ff;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1.05;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 35px rgba(62, 142, 220, 0.35);
+  margin-bottom: 30px;
+}
+
+/* Profile table */
+.neptus-page .profile-row {
+  border-color: rgba(117, 177, 238, 0.2);
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
+.neptus-page .profile-label {
+  color: #78aee0;
+  letter-spacing: 0.13em;
+  font-size: 10px;
+}
+
+.neptus-page .profile-value {
+  color: #dceaff;
+  line-height: 1.8;
+}
+
+/* Description panel */
+.neptus-page .character-introduction {
+  margin-top: 32px;
+  padding: 22px;
+  border: 1px solid rgba(117, 177, 238, 0.3);
+  background: linear-gradient(
+    135deg,
+    rgba(17, 48, 88, 0.38),
+    rgba(3, 12, 28, 0.72)
+  );
+}
+
+.neptus-page .introduction-label {
+  color: #85bdf0;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+}
+
+.neptus-page .character-introduction p {
+  line-height: 2;
+  color: #c4d7eb;
 }
 
 .neptus-page .character-introduction::after {
-  content: "OBSERVATION RECORD  —  NEPTUNE";
+  content: "OBSERVATION LOG  /  NEPTUNE";
   display: block;
-  margin-top: 18px;
-  color: #7896b8;
+  margin-top: 22px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(117, 177, 238, 0.2);
+  color: #6c9fce;
   font-size: 9px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.2em;
 }
 
+/* Color samples */
+.neptus-page .color-palette {
+  margin-top: 28px;
+}
+
+.neptus-page .color-palette span {
+  border: 1px solid rgba(190, 220, 255, 0.35);
+  box-shadow: 0 0 18px rgba(55, 120, 200, 0.18);
+}
+
+/* Back link */
 .neptus-page .back-index {
-  letter-spacing: 0.2em;
-  transition: color 0.3s, border-color 0.3s;
+  color: #9acfff;
+  border-color: rgba(117, 177, 238, 0.35);
+  letter-spacing: 0.18em;
+  transition: 0.3s;
 }
 
 .neptus-page .back-index:hover {
   color: #ffffff;
-  border-color: #7faedb;
+  border-color: #9acfff;
+  box-shadow: 0 0 20px rgba(55, 120, 200, 0.2);
 }
-  
+
+.neptus-page .site-footer {
+  color: #6587ac;
+  border-color: rgba(117, 177, 238, 0.2);
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+  .neptus-page .character-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-top: 38px;
+    padding-bottom: 45px;
+  }
+
+  .neptus-page .character-gallery {
+    max-width: 440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 14px;
+  }
+
+  .neptus-page .character-title {
+    font-size: 3rem;
+  }
+
+  .neptus-page .character-record {
+    padding-top: 10px;
+  }
+}
 </style>
+
   
 </body>
 </html>
