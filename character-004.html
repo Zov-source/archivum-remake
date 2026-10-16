@@ -174,12 +174,13 @@ function changeImage(direction) {
   pointer-events: none;
   z-index: 0;
   opacity: 0.55;
-  background-image:
-    radial-gradient(circle, #c6e4ff 1px, transparent 1.5px),
-    radial-gradient(circle, #5f9edb 1px, transparent 1.5px),
-    radial-gradient(circle, rgba(255,255,255,.8) 1px, transparent 1.5px);
-  background-size: 97px 113px, 151px 167px, 223px 197px;
-  background-position: 12px 20px, 54px 73px, 101px 39px;
+      background-image:
+    radial-gradient(circle, #ffffff 1px, transparent 1.8px),
+    radial-gradient(circle, #8ecbff 1.3px, transparent 2px),
+    linear-gradient(90deg, transparent 49%, rgba(210,235,255,.8) 50%, transparent 51%),
+    linear-gradient(0deg, transparent 49%, rgba(210,235,255,.8) 50%, transparent 51%);
+  background-size: 97px 113px, 151px 167px, 83px 83px, 83px 83px;
+  background-position: 12px 20px, 54px 73px, 20px 35px, 20px 35px;
 }
 
 /* Keep content above stars */
