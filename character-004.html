@@ -174,15 +174,28 @@ function changeImage(direction) {
   pointer-events: none;
   z-index: 0;
   opacity: 0.55;
-      background-image:
-    radial-gradient(circle, #ffffff 1px, transparent 1.8px),
-    radial-gradient(circle, #8ecbff 1.3px, transparent 2px),
-    linear-gradient(90deg, transparent 49%, rgba(210,235,255,.8) 50%, transparent 51%),
-    linear-gradient(0deg, transparent 49%, rgba(210,235,255,.8) 50%, transparent 51%);
-  background-size: 97px 113px, 151px 167px, 83px 83px, 83px 83px;
-  background-position: 12px 20px, 54px 73px, 20px 35px, 20px 35px;
+        background-image: none;
+  background-size: auto;
+  background-position: 0 0;
 }
-
+/* Orbital diagrams */
+.neptus-page::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.22;
+  background:
+    radial-gradient(ellipse at 75% 45%,
+      transparent 0 18%,
+      rgba(105, 163, 220, 0.65) 18.1% 18.2%,
+      transparent 18.3% 28%,
+      rgba(105, 163, 220, 0.5) 28.1% 28.2%,
+      transparent 28.3% 40%,
+      rgba(105, 163, 220, 0.4) 40.1% 40.2%,
+      transparent 40.3%);
+}
 /* Keep content above stars */
 .neptus-page .character-header,
 .neptus-page main,
